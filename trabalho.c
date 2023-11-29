@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 int main() {
-
   int i;
   int questao1, questao2, questao3, questao4, questao5, questao6;
   int deu_certo = 0;
@@ -14,7 +12,7 @@ int main() {
   struct quiz{
   int ponto2;
   char nome_jogador[50];
-};
+ };
   struct quiz quiz[20];
   struct quiz quiz2[20];
   struct quiz quiz1;
@@ -23,8 +21,6 @@ int main() {
   do {
     ponto1 = 0;
    // printf("%i", quiz2[contador].ponto1);
-     contador = contador+1;
-
 
 
     system("clear");
@@ -257,6 +253,7 @@ int main() {
         }
       }
       quiz2[contador].ponto2 = ponto1;
+      contador = contador+1;
     break;
     } 
       case 2:{
@@ -457,14 +454,15 @@ int main() {
             printf(" \e[0;31mÉ... Você está abaixo da média, que tal procurar se divertir mais?!\e[0m\n\n");
           }
         }
+        quiz2[contador].ponto2 = ponto1;
+        contador = contador+1;
       break;
 
       } 
       case 3:
 printf("RANKING:\n");
-        for(int i = 0; i < contador;  i++){
-printf("%s: ", quiz[i].nome_jogador);
-          printf("%i\n", quiz2[contador].ponto2);
+        for(int i = 0; i < contador; i++){
+printf("%s: %i \n", quiz[i].nome_jogador, quiz2[i].ponto2 );
         }
       break;
     default:
@@ -487,5 +485,5 @@ printf("%s: ", quiz[i].nome_jogador);
   } while (voltar == 1);
   system("clear");
   printf("\n\e[0;35mOH que pena! o jogo foi encerrado!\e[0m \n\n");
-  return 0;
-}                                                      
+return 0;
+}                      
